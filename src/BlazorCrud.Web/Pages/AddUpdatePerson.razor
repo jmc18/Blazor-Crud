@@ -1,0 +1,44 @@
+﻿@page "/person/add"
+@page "/person/edit/{personId}"
+<PageTitle>@pagetitle</PageTitle>
+
+<h3>Title</h3>
+<a href="#" class="btn btn-aoutline-dark">Show All</a>
+<div class="row"> 
+    <div class="col-md-6 col-12">
+        <EditForm Model="@person" OnValidSubmit="SavePerson">
+            <DataAnnotationsValidator />
+            <div class="form-group">
+                <label asp-for="Name">Name</label>
+                <InputText class="form-control" @bind-Value="person.Name"></InputText>
+                <ValidationMessage For="@(() => person.Name)" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">FirstName</label>
+                <InputText class="form-control" @bind-Value="person.FirstName"></InputText>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Lastname</label>
+                <InputText class="form-control" @bind-Value="person.LastName"></InputText>
+                <ValidationMessage For="@(() => person.LastName)" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Email</label>
+                <InputText type="email" class="form-control" @bind-Value="person.Email"></InputText>
+                <ValidationMessage For="@(() => person.Email)" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Phone</label>
+                <InputText type="email" class="form-control" @bind-Value="person.Phone"></InputText>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Address</label>
+                <InputText type="email" class="form-control" @bind-Value="person.Address"></InputText>
+            </div>
+            <div class="my-2">@message</div>
+            <div class="my-2">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </EditForm>
+    </div>
+</div>
