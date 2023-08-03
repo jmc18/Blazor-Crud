@@ -1,0 +1,30 @@
+﻿@page "/personlist"
+
+<h3>Person List</h3>
+<a href="/person/add" class="btn btn-success">Add Person</a>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var person in _personList)
+            {
+                <tr>
+                    <td>@($"{person.Name} {person.LastName}")</td>
+                    <td>@person.Email</td>
+                    <td>
+                        <a href="/person/edit/@person.PersonId" class="btn btn-success">Edit</a>
+                        <button @onclick="async () => await DeletePerson(person.PersonId)" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

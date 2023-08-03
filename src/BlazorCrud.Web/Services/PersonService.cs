@@ -7,8 +7,8 @@ namespace BlazorCrud.Web.Services
     public interface IPersonService
     {
         Task<bool> AddUpdate(Person person);
-        Task<bool> Delete(Guid personId);
-        Task<Person> FindById(Guid personId);
+        Task<bool> Delete(string personId);
+        Task<Person> FindById(string personId);
         Task<List<Person>> GetAll();
     }
 
@@ -21,7 +21,7 @@ namespace BlazorCrud.Web.Services
         {
             try
             {
-                if (person.PersonId != null)
+                if (person.PersonId == null)
 
                     await _dbContext.Person.AddAsync(person);
                 else
@@ -36,7 +36,7 @@ namespace BlazorCrud.Web.Services
             
         }
 
-        public async Task<bool> Delete(Guid personId)
+        public async Task<bool> Delete(string personId)
         {
             try
             {
@@ -51,9 +51,9 @@ namespace BlazorCrud.Web.Services
             }
         }
 
-        public async Task<Person> FindById(Guid personId)
+        public async Task<Person> FindById(string personId)
         {
-            return await _dbContext.FindAsync<Person>(personId) ?? new Person();
+            return await _dbContext.FindAsync<Person>(Guid.Parse(personId)) ?? new Person();
         }
 
         public async Task<List<Person>> GetAll()

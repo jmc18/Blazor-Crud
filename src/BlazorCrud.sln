@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{525084C9-C9C0-4812-BD16-5C5446F50F23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCrud.Web", "BlazorCrud.Web\BlazorCrud.Web.csproj", "{A69CB7DB-1DC4-47D2-9550-D34A22D9BBE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCrud.Web", "BlazorCrud.Web\BlazorCrud.Web.csproj", "{A69CB7DB-1DC4-47D2-9550-D34A22D9BBE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
